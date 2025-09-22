@@ -1,243 +1,98 @@
-/* --- Global Styles --- */
-:root {
-    --primary-color: #007bff;
-    --dark-color: #2c3e50;
-    --light-color: #ecf0f1;
-    --text-color: #34495e;
-    --section-padding: 60px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Revolution: Understanding Artificial Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <header>
+        <div class="container">
+            <div id="logo">
+                <h1><a href="#">AI Nexus</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About AI</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#future">The Future</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
-    color: var(--text-color);
-    background-color: #fff;
-}
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Exploring the Frontiers of Intelligence</h2>
+                <p>From machine learning to neural networks, discover how AI is reshaping our world.</p>
+                <a href="#about" class="button">Learn More</a>
+            </div>
+        </section>
 
-html {
-    scroll-behavior: smooth;
-}
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2>What is Artificial Intelligence?</h2>
+                <div class="about-flex">
+                    <div class="about-text">
+                        <p>Artificial Intelligence (AI) is a wide-ranging branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence. It is an interdisciplinary science with multiple approaches, but advancements in <strong>machine learning</strong> and <strong>deep learning</strong> are creating a paradigm shift in virtually every sector of the tech industry.</p>
+                        <h3>Core Concepts:</h3>
+                        <ul>
+                            <li><strong>Machine Learning:</strong> Algorithms that allow computers to learn from and make predictions or decisions based on data.</li>
+                            <li><strong>Deep Learning:</strong> A subset of machine learning based on artificial neural networks with many layers.</li>
+                            <li><strong>Natural Language Processing (NLP):</strong> The ability of computers to understand, interpret, and generate human language.</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/400x300.png?text=AI+Concept" alt="Abstract AI concept image">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-}
+        <section id="applications" class="content-section bg-light">
+            <div class="container">
+                <h2>Real-World Applications of AI</h2>
+                <div class="app-grid">
+                    <div class="app-card">
+                        <h3>Healthcare</h3>
+                        <p>AI helps in diagnosing diseases earlier, discovering new drugs, and personalizing patient treatment plans.</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Finance</h3>
+                        <p>Algorithmic trading, fraud detection, and automated customer service are powered by AI in the financial sector.</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Autonomous Vehicles</h3>
+                        <p>Self-driving cars use sophisticated AI systems to perceive their environment and navigate safely.</p>
+                    </div>
+                    <div class="app-card">
+                        <h3>Entertainment</h3>
+                        <p>Recommendation engines on platforms like Netflix and Spotify learn your preferences to suggest content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="future" class="content-section">
+            <div class="container">
+                <h2>The Future is Intelligent</h2>
+                <p>The potential of AI is immense, promising to solve some of humanity's most pressing challenges. From climate change modeling to creating hyper-personalized education, the next decade of AI development will be transformative. However, it also brings up important ethical questions about privacy, bias in algorithms, and the future of work that we must address responsibly.</p>
+                 <a href="#" class="button">Join the Conversation</a>
+            </div>
+        </section>
 
-h1, h2, h3 {
-    font-weight: 700;
-    margin-bottom: 20px;
-}
+    </main>
 
-h2 {
-    font-size: 2.2rem;
-    text-align: center;
-}
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2025 AI Nexus. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-p {
-    margin-bottom: 15px;
-}
-
-.content-section {
-    padding: var(--section-padding) 0;
-}
-
-.bg-light {
-    background-color: var(--light-color);
-}
-
-.button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-
-/* --- Header & Navigation --- */
-header {
-    background-color: var(--dark-color);
-    color: #fff;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header #logo h1 a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.8rem;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 25px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: var(--primary-color);
-}
-
-
-/* --- Hero Section --- */
-#hero {
-    background: url('https://images.unsplash.com/photo-1531771686035-25f47595c87a?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-    height: 90vh;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-
-#hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-#hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-#hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-}
-
-#hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-}
-
-
-/* --- About Section --- */
-#about .about-flex {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
-
-#about .about-text {
-    flex: 2;
-}
-
-#about .about-text ul {
-    list-style: none;
-    padding-left: 0;
-}
-#about .about-text li {
-    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="%23007bff" d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>') no-repeat left center;
-    padding-left: 35px;
-    margin-bottom: 10px;
-}
-
-#about .about-image {
-    flex: 1;
-}
-
-#about .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-
-/* --- Applications Section --- */
-.app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.app-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.app-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-
-/* --- Future Section --- */
-#future {
-    text-align: center;
-}
-
-#future .container {
-    max-width: 800px;
-}
-
-
-/* --- Footer --- */
-footer {
-    background-color: var(--dark-color);
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    h2 { font-size: 1.8rem; }
-    #hero h2 { font-size: 2.5rem; }
-    
-    header .container {
-        flex-direction: column;
-    }
-    header nav ul {
-        padding: 10px 0;
-    }
-    
-    #about .about-flex {
-        flex-direction: column;
-    }
-}
+</body>
+</html>
