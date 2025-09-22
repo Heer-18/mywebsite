@@ -3,167 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Google</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
-        /* --- Basic Styling --- */
+        /* --- Basic Setup & Body --- */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            margin: 0;
             display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        /* --- Header: Top-right links (Gmail, Images) --- */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #202124;
+            margin-left: 15px;
+            font-size: 13px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .sign-in-button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 9px 23px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .sign-in-button:hover {
+            background-color: #1b66c9;
+            text-decoration: none;
+        }
+
+        /* --- Main Content: Centered elements --- */
+        main {
+            flex-grow: 1; /* Takes up all available vertical space */
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            padding-bottom: 15vh; /* Pushes content slightly up */
         }
 
-        /* --- Form Container --- */
-        .form-container {
-            background-color: #fff;
-            padding: 25px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #4a4a4a;
+        /* --- Logo Styling --- */
+        .logo {
+            font-size: 80px;
+            font-weight: 400;
+            letter-spacing: -2px;
             margin-bottom: 25px;
-            font-size: 1.8em;
         }
+        .logo .g-blue { color: #4285F4; }
+        .logo .o-red { color: #EA4335; }
+        .logo .o-yellow { color: #FBBC05; }
+        .logo .g-green { color: #34A853; }
+        .logo .l-blue { color: #4285F4; }
+        .logo .e-red { color: #EA4335; }
 
-        /* --- Form Groups & Labels --- */
-        .form-group {
-            margin-bottom: 20px;
-        }
 
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        /* --- Input Fields Styling --- */
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="date"],
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box; /* Important for padding */
-            font-size: 1em;
-            transition: border-color 0.3s;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-        
-        /* --- Checkbox & Radio Buttons --- */
-        .checkbox-group {
+        /* --- Search Bar Container --- */
+        .search-bar-container {
             display: flex;
             align-items: center;
-        }
-        
-        .checkbox-group input {
-            margin-right: 10px;
-        }
-
-        /* --- Buttons --- */
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px; /* space between buttons */
-        }
-        
-        button {
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
             width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            max-width: 580px;
+            height: 46px;
+            padding: 0 15px;
         }
 
-        button[type="submit"] {
-            background-color: #007bff;
-            color: white;
+        .search-bar-container:hover,
+        .search-bar-container:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+
+        .search-bar-container .search-icon {
+            color: #9aa0a6;
+            font-size: 16px;
+        }
+
+        /* --- Search Input Field --- */
+        .search-input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            margin: 0 15px;
+            background: transparent;
+        }
+
+        .search-bar-container .mic-icon {
+            color: #4285F4;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+
+        /* --- Buttons Below Search Bar --- */
+        .search-buttons {
+            margin-top: 30px;
+        }
+
+        .search-buttons button {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            margin: 0 6px;
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        .search-buttons button:hover {
+            border: 1px solid #dadce0;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
         }
         
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
+        /* --- Responsive Design for smaller screens --- */
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 60px;
+            }
+            .search-bar-container {
+                max-width: 90%;
+            }
+            main {
+                padding-bottom: 10vh;
+            }
         }
-        
-        button[type="reset"] {
-            background-color: #6c757d;
-            color: white;
-        }
-        
-        button[type="reset"]:hover {
-            background-color: #5a6268;
-        }
+
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <h1>Community Event Registration</h1>
+    <header>
+        <a href="#">Gmail</a>
+        <a href="#">Images</a>
+        <a href="#" class="sign-in-button">Sign in</a>
+    </header>
 
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
+    <main>
+        <h1 class="logo">
+            <span class="g-blue">G</span><span class="o-red">o</span><span class="o-yellow">o</span><span class="g-green">g</span><span class="l-blue">l</span><span class="e-red">e</span>
+        </h1>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+        <div class="search-bar-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input">
+            <i class="fas fa-microphone mic-icon"></i>
+        </div>
 
-            <div class="form-group">
-                <label for="password">Create Password</label>
-                <input type="password" id="password" name="password" minlength="8" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" name="dob">
-            </div>
-
-            <div class="form-group">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                    <option value="">--Please choose an option--</option>
-                    <option value="India" selected>India</option>
-                    <option value="USA">United States</option>
-                    <option value="UK">United Kingdom</option>
-                    <option value="Canada">Canada</option>
-                </select>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the Terms and Conditions</label>
-            </div>
-            
-            <div class="button-group">
-                <button type="submit">Register</button>
-                <button type="reset">Clear Form</button>
-            </div>
-
-        </form>
-    </div>
+        <div class="search-buttons">
+            <button>Google Search</button>
+            <button>I'm Feeling Lucky</button>
+        </div>
+    </main>
 
 </body>
 </html>
