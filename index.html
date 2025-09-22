@@ -3,175 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <style>
-        /* --- Basic Setup & Body --- */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #fff;
-        }
-
-        /* --- Header: Top-right links (Gmail, Images) --- */
-        header {
-            display: flex;
-            justify-content: flex-end;
-            padding: 15px 20px;
-        }
-
-        header a {
-            text-decoration: none;
-            color: #202124;
-            margin-left: 15px;
-            font-size: 13px;
-        }
-
-        header a:hover {
-            text-decoration: underline;
-        }
-
-        .sign-in-button {
-            background-color: #1a73e8;
-            color: white;
-            padding: 9px 23px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        
-        .sign-in-button:hover {
-            background-color: #1b66c9;
-            text-decoration: none;
-        }
-
-        /* --- Main Content: Centered elements --- */
-        main {
-            flex-grow: 1; /* Takes up all available vertical space */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 15vh; /* Pushes content slightly up */
-        }
-
-        /* --- Logo Styling --- */
-        .logo {
-            font-size: 80px;
-            font-weight: 400;
-            letter-spacing: -2px;
-            margin-bottom: 25px;
-        }
-        .logo .g-blue { color: #4285F4; }
-        .logo .o-red { color: #EA4335; }
-        .logo .o-yellow { color: #FBBC05; }
-        .logo .g-green { color: #34A853; }
-        .logo .l-blue { color: #4285F4; }
-        .logo .e-red { color: #EA4335; }
-
-
-        /* --- Search Bar Container --- */
-        .search-bar-container {
-            display: flex;
-            align-items: center;
-            border: 1px solid #dfe1e5;
-            border-radius: 24px;
-            width: 100%;
-            max-width: 580px;
-            height: 46px;
-            padding: 0 15px;
-        }
-
-        .search-bar-container:hover,
-        .search-bar-container:focus-within {
-            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
-            border-color: rgba(223,225,229,0);
-        }
-
-        .search-bar-container .search-icon {
-            color: #9aa0a6;
-            font-size: 16px;
-        }
-
-        /* --- Search Input Field --- */
-        .search-input {
-            flex-grow: 1;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            margin: 0 15px;
-            background: transparent;
-        }
-
-        .search-bar-container .mic-icon {
-            color: #4285F4;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-
-        /* --- Buttons Below Search Bar --- */
-        .search-buttons {
-            margin-top: 30px;
-        }
-
-        .search-buttons button {
-            background-color: #f8f9fa;
-            border: 1px solid #f8f9fa;
-            border-radius: 4px;
-            color: #3c4043;
-            font-size: 14px;
-            margin: 0 6px;
-            padding: 10px 16px;
-            cursor: pointer;
-        }
-
-        .search-buttons button:hover {
-            border: 1px solid #dadce0;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-        }
-        
-        /* --- Responsive Design for smaller screens --- */
-        @media (max-width: 600px) {
-            .logo {
-                font-size: 60px;
-            }
-            .search-bar-container {
-                max-width: 90%;
-            }
-            main {
-                padding-bottom: 10vh;
-            }
-        }
-
-    </style>
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <a href="#">Gmail</a>
-        <a href="#">Images</a>
-        <a href="#" class="sign-in-button">Sign in</a>
-    </header>
-
-    <main>
-        <h1 class="logo">
-            <span class="g-blue">G</span><span class="o-red">o</span><span class="o-yellow">o</span><span class="g-green">g</span><span class="l-blue">l</span><span class="e-red">e</span>
-        </h1>
-
-        <div class="search-bar-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" class="search-input">
-            <i class="fas fa-microphone mic-icon"></i>
+    <h1>Snake</h1>
+    <div class="score-container">Score: <span id="score">0</span></div>
+    
+    <div class="game-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="gameOverScreen" class="hidden">
+            <h2>Game Over</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="playAgainButton">Play Again</button>
         </div>
+    </div>
 
-        <div class="search-buttons">
-            <button>Google Search</button>
-            <button>I'm Feeling Lucky</button>
-        </div>
-    </main>
-
+    <script src="script.js"></script>
 </body>
 </html>
